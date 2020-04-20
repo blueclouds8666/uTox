@@ -54,7 +54,7 @@ UTOX_WINDOW *native_window_create_main(int x, int y, int w, int h) {
     static const wchar_t class[] = L"uTox";
 
     char pretitle[128];
-    snprintf(pretitle, 128, "%s %s (version : %s)", TITLE, SUB_TITLE, VERSION);
+    snprintf(pretitle, 128, "%s %s (version : %s-R2) (github-7afba86cbb) (24-12-2017)", TITLE, SUB_TITLE, VERSION);
     size_t  title_size = strlen(pretitle) + 1;
     wchar_t title[title_size];
     mbstowcs(title, pretitle, title_size);

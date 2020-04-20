@@ -82,6 +82,7 @@ endif()
 # Options #
 ###########
 
+option(ENABLE_DEBUG_MODE  "Enable the debugging console window"      		     				OFF)
 option(UTOX_STATIC        "Link uTox statically"                                 ${STATIC_DEFAULT} )
 option(TOXCORE_STATIC     "Build uTox with the static version of Toxcore"        ${STATIC_DEFAULT} )
 option(ENABLE_ASAN        "Enable Address Sanitizer on debug builds"               ${ASAN_DEFAULT} )
@@ -90,6 +91,10 @@ option(ENABLE_WERROR      "Error on Warning, whether to put -Werror flag to the 
 option(ENABLE_FILTERAUDIO "Enable Filter Audio"                                                 ON )
 option(ENABLE_AUTOUPDATE  "Enable Auto-updater"                                                 OFF)
 option(ENABLE_LTO         "Enable link time optimizations"                                      ON )
+
+if (NOT ENABLE_DEBUG_MODE)
+	set(CMAKE_BUILD_TYPE "Release")
+endif()
 
 
 #################################
@@ -166,7 +171,6 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} $ENV{CFLAGS}")
 add_cflag("-Wall")
 add_cflag("-Wextra")
 add_cflag("-Wpointer-arith")
-add_cflag("-Wimplicit-fallthrough=5")
 
 ## Warnings we don't tolerate
 add_cflag("-Werror=implicit-function-declaration")
@@ -175,9 +179,19 @@ add_cflag("-Werror=implicit-function-declaration")
 add_cflag("-Wformat=0")
 add_cflag("-Wno-misleading-indentation")
 
+## help the make program find the libraries
+if(WIN32 OR WIN64)
+	add_cflag("-L ../libs/windows-x64/lib")
+	add_cflag("-L ../libs/windows/lib")
+endif()
+
 ## Everything Else
 add_cflag("-fno-strict-aliasing")
-add_cflag("-fPIC")
+
+if(UNIX OR APPLE)
+	add_cflag("-fPIC")
+	add_cflag("-Wimplicit-fallthrough=5")
+endif()
 
 ## Optimization Flags
 
