@@ -15,19 +15,16 @@ After the original developers decided to remove support for the Microsoft® Wind
 ## Latest builds
 
 Latest stable build:
-- **Release date:**  22 Aug 2017
-- **Version number:**  v0.16.1
-- [32bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.16.1/utox-i686.exe)
-- [64bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.16.1/utox-AMD64.exe)
+- **Release date:**  15 Apr 2018
+- **Version number:**  v0.17.0
+- [32bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.0/utox-i686.exe)
+- [64bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.0/utox-AMD64.exe)
 
 ## Compiling
 
-Choose the level of difficulty:
+Building uTox XP from source is easier than you think! Using terminal isn't required, we promise.
 
-- **Casual:** build μTox only with precompiled libraries. [32bit](https://github.com/blueclouds8666/uTox_XP/blob/legacy-0.16.1/COMPILE32.md) and [64bit](https://github.com/blueclouds8666/uTox_XP/blob/legacy-0.16.1/COMPILE64.md) instructions.
-  - It is easy but if you want to do extended core modifications, this isn't enough.
-
-- **Skilled:** build μTox AND the c-toxcore library. [32bit](https://github.com/blueclouds8666/uTox_XP/blob/legacy-0.16.1/COMPILE32-full.md) and [64bit](https://github.com/blueclouds8666/uTox_XP/blob/legacy-0.16.1/COMPILE64-full.md) instructions.
-  - it takes more time but you might be interested on this one.
+Instructions for compiling for [32 bit](https://github.com/blueclouds8666/uTox_XP/blob/legacy-0.17.0/COMPILE32.md) or [64 bit](https://github.com/blueclouds8666/uTox_XP/blob/legacy-0.17.0/COMPILE64.md) architectures.
 <br />
 <br />
+ 
