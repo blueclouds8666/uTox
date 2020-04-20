@@ -27,7 +27,7 @@ We will mainly use two developer utilities called **MinGW** and **CMake GUI**. F
 - [MSYS component - coreutils](https://github.com/blueclouds8666/uTox_XP/raw/files/utilities/MinGW%20Packages%20msys/coreutils-5.97-MSYS-1.0.11-snapshot.tar.xz)
 - [MSYS component - libcrypt](https://github.com/blueclouds8666/uTox_XP/raw/files/utilities/MinGW%20Packages%20msys/libcrypt-1.1_1-3-msys-1.0.13-dll-0.tar.xz)
 - [MSYS component - m4 macro processor](https://github.com/blueclouds8666/uTox_XP/raw/files/utilities/MinGW%20Packages%20msys/m4-1.4.16-2-msys-1.0.17-bin.tar.xz)
-- [MSYS component - Perl](https://github.com/blueclouds8666/uTox_XP/blob/files/utilities/MinGW%20Packages%20msys/perl-5.8.8-1-msys-1.0.17-bin.tar.xz)
+- [MSYS component - Perl](https://github.com/blueclouds8666/uTox_XP/raw/files/utilities/MinGW%20Packages%20msys/perl-5.8.8-1-msys-1.0.17-bin.tar.xz)
 
 1. Install CMake GUI with default values from *cmake-3.2.3-win32-x86.exe*.
 2. Extract *MinGW-portable.7z* on the C:\ root folder. A new folder C:\MinGW will appear.
