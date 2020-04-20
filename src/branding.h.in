@@ -5,9 +5,10 @@
  * It is generated from branding.h.in which cmake will generate to branding.h
  */
 
-#define TITLE "uTox"
+#define TITLE "uTox XP"
 #define SUB_TITLE "(Alpha)"
 
+// The updater relies on these version numbers, and values greater than an octet were never tested
 #define VERSION "@PROJECT_VERSION@"
 #define VER_MAJOR @PROJECT_VERSION_MAJOR@
 #define VER_MINOR @PROJECT_VERSION_MINOR@

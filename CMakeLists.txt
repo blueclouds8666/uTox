@@ -80,6 +80,7 @@ endif()
 # Options #
 ###########
 
+option(ENABLE_DEBUG_MODE  "Enable the debugging console window"      		     				OFF)
 option(STATIC_ALL         "Enable all STATIC_* options"                          ${STATIC_DEFAULT} )
 option(STATIC_TOXCORE     "Link toxcore statically"                              ${STATIC_DEFAULT} )
 option(STATIC_DBUS        "Link dbus statically"                                 ${STATIC_DEFAULT} )
@@ -92,6 +93,10 @@ option(ENABLE_TESTS       "Whether to build test binaries (currently Unix-like O
 option(ENABLE_WERROR      "Error on Warning, whether to put -Werror flag to the compiler"       OFF)
 option(ENABLE_FILTERAUDIO "Enable Filter Audio"                                                 ON )
 option(ENABLE_LTO         "Enable link time optimizations"                                      ON )
+
+if (NOT ENABLE_DEBUG_MODE)
+	set(CMAKE_BUILD_TYPE "Release")
+endif()
 
 
 #################################
@@ -161,7 +166,6 @@ endfunction()
 add_cflag("-Wall")
 add_cflag("-Wextra")
 add_cflag("-Wpointer-arith")
-add_cflag("-Wimplicit-fallthrough=5")
 
 ## Warnings we don't tolerate
 add_cflag("-Werror=implicit-function-declaration")
@@ -170,10 +174,20 @@ add_cflag("-Werror=implicit-function-declaration")
 add_cflag("-Wformat=0")
 add_cflag("-Wno-misleading-indentation")
 
+## help the make program find the libraries
+if(WIN32 OR WIN64)
+	add_cflag("-L ../libs/windows-x64/lib")
+	add_cflag("-L ../libs/windows/lib")
+endif()
+
 ## Everything Else
 add_cflag("-fno-strict-aliasing")
-add_cflag("-fPIC")
-add_cflag("-fno-common")
+
+if(UNIX OR APPLE)
+	add_cflag("-fno-common")
+	add_cflag("-fPIC")
+	add_cflag("-Wimplicit-fallthrough=5")
+endif()
 
 ## Optimization Flags
 
@@ -279,7 +293,9 @@ find_package(libvpx REQUIRED)
 include_directories(${LIBVPX_INCLUDE_DIRS})
 set(LIBRARIES ${LIBRARIES} ${LIBVPX_LIBRARIES})
 
-add_subdirectory(third_party)
+include_directories(SYSTEM third-party/stb)
+include_directories(SYSTEM third-party/minini/dev)
+include_directories(SYSTEM third-party/qrcodegen/c)
 
 # Protip, you must use a different directory for each build target...
 # -DMAKE_TOOLCHAIN_FILE has no effect unless the target directory is empty
@@ -314,10 +330,12 @@ elseif(UNIX)
 endif()
 
 # Acquire 3rd party headers
-find_path(STBI_INCLUDE_DIR NAMES stb_image.h stb_image_write.h PATHS third_party/stb/stb)
+find_path(STBI_INCLUDE_DIR NAMES stb_image.h stb_image_write.h PATHS third-party/stb)
 if((NOT STBI_INCLUDE_DIR) OR (NOT EXISTS ${STBI_INCLUDE_DIR}))
     message("STBI not found")
-    execute_process(COMMAND git submodule update --init -- third_party/stb/stb WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+    execute_process(COMMAND git submodule update --init -- third-party/stb WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+    # set FOO_INCLUDE_DIR properly
+    set(STBI_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third-party/stb/ CACHE PATH "stbi include directory")
 endif()
 
 
@@ -353,6 +371,7 @@ add_executable(utox ${GUI_TYPE}
     src/self.c
     src/settings.c
     src/sized_string.h
+    src/stb.c
     src/text.c
     src/theme.c
     src/theme_tables.c
@@ -362,6 +381,8 @@ add_executable(utox ${GUI_TYPE}
     src/ui_i18n.c
     src/utox.c
     src/window.c
+    third-party/minini/dev/minIni.c
+    third-party/qrcodegen/c/qrcodegen.c
 
     ${WINDOWS_ICON}
     ${APPLE_FILES}
@@ -374,9 +395,6 @@ target_link_libraries(utox
     ${LIBRARIES}
     pthread
     m
-    stb
-    minini
-    qrcodegen
 )
 
 set_property(TARGET utox PROPERTY C_STANDARD 11)
