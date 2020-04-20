@@ -25,6 +25,8 @@ Latest snapshot [dev] build:
 - **Version number:**  v0.17.2
 - [32bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.2/utox-i686.exe)
 - [64bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.2/utox-AMD64.exe)
+<br />
+<br />
 
 ## Compiling
 
@@ -32,12 +34,14 @@ Building uTox XP from source is easier than you think! Using terminal isn't requ
 
 Instructions for compiling for [32 bit](https://github.com/blueclouds8666/uTox_XP/blob/develop/COMPILE32.md) or [64 bit](https://github.com/blueclouds8666/uTox_XP/blob/develop/COMPILE64.md) architectures.
 <br />
+<br />
 
 ## Old releases
 
 You might be intereted on downloading and compiling older releases of uTox. They all have also been fixed for XP support, plus the improved documentation.
 
 You can check them in here: [0.16.1](https://github.com/blueclouds8666/uTox_XP/tree/legacy-0.16.1) - [0.16.1-R2](https://github.com/blueclouds8666/uTox_XP/tree/oldtoxcore) - [0.17.0](https://github.com/blueclouds8666/uTox_XP/tree/legacy-0.17.0) - [0.17.1](https://github.com/blueclouds8666/uTox_XP/tree/legacy-0.17.1) - [0.17.1-R2](https://github.com/blueclouds8666/uTox_XP/tree/official-last) - [0.17.2](https://github.com/blueclouds8666/uTox_XP/tree/legacy-0.17.2).
+<br />
 <br />
 
 ## Dev team
