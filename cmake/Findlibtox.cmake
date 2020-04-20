@@ -5,6 +5,10 @@
 #  LIBTOX_LIBRARIES - The libraries needed to use Tox
 #  LIBTOX_DEFINITIONS - Compiler switches required for using Tox
 
+if((WIN32 OR WIN64) AND NOT CROSS_COMPILING)
+	set(CMAKE_PREFIX_PATH PATHS C:/MinGW/bin)
+endif()
+
 find_package(PkgConfig)
 
 pkg_check_modules(PKG_LIBTOX QUIET libtoxcore)
@@ -13,11 +17,13 @@ set(LIBTOX_DEFINITIONS ${PKG_LIBTOX_CFLAGS_OTHER})
 find_path(LIBTOX_INCLUDE_DIR tox/tox.h HINTS
     ${PKG_LIBTOX_INCLUDEDIR}
     ${PKG_LIBTOX_INCLUDE_DIRS}
+	${CMAKE_SOURCE_DIR}/libs/windows/include
 )
 
 find_library(LIBTOX_LIBRARY NAMES toxcore HINTS
     ${PKG_LIBTOX_LIBDIR}
     ${PKG_LIBTOX_LIBRARY_DIRS}
+	${CMAKE_SOURCE_DIR}/libs/windows/lib
 )
 
 include(FindPackageHandleStandardArgs)

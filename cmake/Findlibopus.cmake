@@ -13,11 +13,13 @@ set(LIBOPUS_DEFINITIONS ${PKG_LIBOPUS_CFLAGS_OTHER})
 find_path(LIBOPUS_INCLUDE_DIR opus/opus.h HINTS
     ${PKG_LIBOPUS_INCLUDEDIR}
     ${PKG_LIBOPUS_INCLUDE_DIRS}
+	${CMAKE_SOURCE_DIR}/libs/windows/include
 )
 
 find_library(LIBOPUS_LIBRARY NAMES opus HINTS
     ${PKG_LIBOPUS_LIBDIR}
     ${PKG_LIBOPUS_LIBRARY_DIRS}
+	${CMAKE_SOURCE_DIR}/libs/windows/lib
 )
 
 include(FindPackageHandleStandardArgs)
