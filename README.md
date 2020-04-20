@@ -26,7 +26,6 @@ Latest snapshot [dev] build:
 - [32bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.2/utox-i686.exe)
 - [64bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.2/utox-AMD64.exe)
 <br />
-<br />
 
 ## Compiling
 
