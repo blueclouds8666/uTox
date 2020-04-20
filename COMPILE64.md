@@ -29,7 +29,7 @@ We will mainly use two developer utilities called **MinGW** and **CMake GUI**. F
 
 Now we will need the μTox source files, plus the precompiled libraries. Those are:
 
-- [uTox source code](https://github.com/blueclouds8666/uTox_XP/archive/legacy-0.17.2.zip)
+- [uTox source code](https://github.com/blueclouds8666/uTox_XP/archive/develop.zip)
 - [uTox library - filter_audio x64](https://github.com/blueclouds8666/uTox_XP/raw/files/libraries-precompiled/windows-x64/libfilteraudio_build_windows_x86-64.zip)
 - [uTox library - OpenAL x64](https://github.com/blueclouds8666/uTox_XP/raw/files/libraries-precompiled/windows-x64/libopenal-1.16.0_build_windows_x86-64.zip)
 - [uTox library - Opus x64 v1.3.1](https://github.com/blueclouds8666/uTox_XP/raw/files/libraries-precompiled/windows-x64/libopus-1.3.1_build_windows_x86-64.zip)
