@@ -10,27 +10,27 @@ After the original developers decided to remove support for the Microsoft® Wind
 
 μTox running on Windows XP
 
-![μTox on WinXP](TODO "μTox running on Windows XP")
+![μTox on WinXP](https://github.com/blueclouds8666/uTox_XP/raw/files/screenshot.png "μTox running on Windows XP")
 
 ## Latest builds
 
 Latest stable build:
 - **Release date:**  13 Apr 2020
 - **Version number:**  v0.17.2
-- [32bit binary](TODO)
-- [64bit binary](TODO)
+- [32bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.2/utox-i686.exe)
+- [64bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.2/utox-AMD64.exe)
 
 Latest snapshot [dev] build:
 - **Release date:**  13 Apr 2020
 - **Version number:**  v0.17.2
-- [32bit binary](TODO)  
-- [64bit binary](TODO) 
+- [32bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.2/utox-i686.exe)
+- [64bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.2/utox-AMD64.exe)
 
 ## Compiling
 
 Building uTox XP from source is easier than you think! Using terminal isn't required, we promise.
 
-Instructions for compiling for [32 bit](TODO) or [64 bit](TODO) architectures.
+Instructions for compiling for [32 bit](https://github.com/blueclouds8666/uTox_XP/blob/develop/COMPILE32.md) or [64 bit](https://github.com/blueclouds8666/uTox_XP/blob/develop/COMPILE64.md) architectures.
 
 ## Old releases
 
@@ -42,8 +42,7 @@ You can check them in here: [0.16.1](https://github.com/blueclouds8666/uTox_XP/t
 
 GitHub name | Email address
 --- | ---
-blueclouds8666 | blueclouds8666@mail.com `
+blueclouds8666 | blueclouds8666@mail.com 
 
-<br />
 <br />
  
