@@ -15,8 +15,8 @@ After the original developers decided to remove support for the Microsoft® Wind
 ## Latest builds
 
 Latest stable build:
-- **Release date:**  15 Apr 2018
-- **Version number:**  v0.17.0
+- **Release date:**  21 Sep 2019
+- **Version number:**  v0.17.1
 - [32bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.1/utox-i686.exe)
 - [64bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.1/utox-AMD64.exe)
 
