@@ -1,4 +1,0 @@
-winTox
-======
-
-Lightweight Tox client
