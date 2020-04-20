@@ -100,9 +100,9 @@ void native_autoselect_dir_ft(uint32_t fid, FILE_TRANSFER *file) {
     if (settings.portable_mode) {
         autoaccept_folder = calloc(1, UTOX_FILE_NAME_LENGTH * sizeof(wchar_t));
         utf8_to_nativestr(portable_mode_save_path, autoaccept_folder, strlen(portable_mode_save_path) * 2);
-    } else if (SHGetKnownFolderPath((REFKNOWNFOLDERID)&FOLDERID_Downloads,
-                                    KF_FLAG_CREATE, NULL, &autoaccept_folder) != S_OK) {
+    } else if (SHGetFolderPathW(NULL, CSIDL_DESKTOP, NULL, 0, autoaccept_folder) != S_OK) {
         LOG_ERR("Windows7", "Unable to get auto accept file folder!");
+		free(autoaccept_folder);						
         return;
     }
 
@@ -152,7 +152,7 @@ void launch_at_startup(bool should) {
             path_length += 2;
 
             // 2 bytes per wchar_t
-            uint16_t ret = RegSetKeyValueW(hKey, NULL, L"uTox", REG_SZ, path, path_length * 2);
+            uint16_t ret = RegSetValueExW(hKey, L"uTox", 0, REG_SZ, (uint8_t *)path, path_length * 2); /*2 bytes per wchar_t */
             if (ret == ERROR_SUCCESS) {
                 LOG_INFO("Windows7", "Set uTox to run at startup.");
             } else {
@@ -164,7 +164,7 @@ void launch_at_startup(bool should) {
     } else {
         HKEY hKey;
         if (ERROR_SUCCESS == RegOpenKeyW(HKEY_CURRENT_USER, run_key_path, &hKey)) {
-            uint16_t ret = RegDeleteKeyValueW(hKey, NULL, L"uTox");
+            uint16_t ret = RegDeleteValueW(hKey, L"uTox");
             if (ret == ERROR_SUCCESS) {
                 LOG_INFO("Windows7", "Set uTox to not run at startup.");
             } else {

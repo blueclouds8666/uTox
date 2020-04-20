@@ -80,6 +80,7 @@ endif()
 # Options #
 ###########
 
+option(ENABLE_DEBUG_MODE  "Enable the debugging console window"      		     				OFF)
 option(STATIC_ALL         "Enable all STATIC_* options"                          ${STATIC_DEFAULT} )
 option(STATIC_TOXCORE     "Link toxcore statically"                              ${STATIC_DEFAULT} )
 option(STATIC_DBUS        "Link dbus statically"                                 ${STATIC_DEFAULT} )
@@ -92,6 +93,10 @@ option(ENABLE_TESTS       "Whether to build test binaries (currently Unix-like O
 option(ENABLE_WERROR      "Error on Warning, whether to put -Werror flag to the compiler"       OFF)
 option(ENABLE_FILTERAUDIO "Enable Filter Audio"                                                 ON )
 option(ENABLE_LTO         "Enable link time optimizations"                                      ON )
+
+if (NOT ENABLE_DEBUG_MODE)
+	set(CMAKE_BUILD_TYPE "Release")
+endif()
 
 
 #################################
@@ -161,7 +166,6 @@ endfunction()
 add_cflag("-Wall")
 add_cflag("-Wextra")
 add_cflag("-Wpointer-arith")
-add_cflag("-Wimplicit-fallthrough=5")
 
 ## Warnings we don't tolerate
 add_cflag("-Werror=implicit-function-declaration")
@@ -170,11 +174,19 @@ add_cflag("-Werror=implicit-function-declaration")
 add_cflag("-Wformat=0")
 add_cflag("-Wno-misleading-indentation")
 
+## help the make program find the libraries
+if(WIN32 OR WIN64)
+	add_cflag("-L ../libs/windows-x64/lib")
+	add_cflag("-L ../libs/windows/lib")
+endif()
+
 ## Everything Else
 add_cflag("-fno-strict-aliasing")
-add_cflag("-fPIC")
-if(NOT WINDOWS) # TODO fix windows
-    add_cflag("-fno-common")
+
+if(UNIX OR APPLE)
+	add_cflag("-fno-common")
+	add_cflag("-fPIC")
+	add_cflag("-Wimplicit-fallthrough=5")
 endif()
 
 ## Optimization Flags

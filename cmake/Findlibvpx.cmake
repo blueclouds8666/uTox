@@ -13,17 +13,20 @@ set(LIBVPX_DEFINITIONS ${PKG_LIBVPX_CFLAGS_OTHER})
 find_path(LIBVPX_INCLUDE_DIR vpx/vpx_codec.h HINTS
     ${PKG_LIBVPX_INCLUDEDIR}
     ${PKG_LIBVPX_INCLUDE_DIRS}
+	${CMAKE_SOURCE_DIR}/libs/windows/include
 )
 
 if(STATIC_ALL OR STATIC_VPX)
     find_library(LIBVPX_LIBRARY NAMES libvpx.a HINTS
         ${PKG_LIBVPX_LIBDIR}
         ${PKG_LIBVPX_LIBRARY_DIRS}
+		${CMAKE_SOURCE_DIR}/libs/windows/lib
     )
 else()
     find_library(LIBVPX_LIBRARY NAMES vpx HINTS
         ${PKG_LIBVPX_LIBDIR}
         ${PKG_LIBVPX_LIBRARY_DIRS}
+		${CMAKE_SOURCE_DIR}/libs/windows/lib
     )
 endif()
 

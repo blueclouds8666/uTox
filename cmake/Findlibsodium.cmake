@@ -13,17 +13,20 @@ set(LIBSODIUM_DEFINITIONS ${PKG_LIBSODIUM_CFLAGS_OTHER})
 find_path(LIBSODIUM_INCLUDE_DIR sodium.h HINTS
     ${PKG_LIBSODIUM_INCLUDEDIR}
     ${PKG_LIBSODIUM_INCLUDE_DIRS}
+	${CMAKE_SOURCE_DIR}/libs/windows/include
 )
 
 if(STATIC_ALL OR STATIC_SODIUM)
     find_library(LIBSODIUM_LIBRARY NAMES libsodium.a HINTS
         ${PKG_LIBSODIUM_LIBDIR}
         ${PKG_LIBSODIUM_LIBRARY_DIRS}
+		${CMAKE_SOURCE_DIR}/libs/windows/lib
     )
 else()
     find_library(LIBSODIUM_LIBRARY NAMES sodium HINTS
         ${PKG_LIBSODIUM_LIBDIR}
         ${PKG_LIBSODIUM_LIBRARY_DIRS}
+		${CMAKE_SOURCE_DIR}/libs/windows/lib
     )
 endif()
 
