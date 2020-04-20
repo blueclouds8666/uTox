@@ -19,13 +19,15 @@
 #   toxcrypto
 #   toxnetwork
 
-find_package(PkgConfig)
 
-if(libtox_FIND_COMPONENTS)
-    set(_TOX_COMPNENTS ${libtox_FIND_COMPONENTS})
-else()
-    set(_TOX_COMPNENTS toxencryptsave toxdns toxav toxcore) # default components
+# help cmake find pkg-config	
+if((WIN32 OR WIN64) AND NOT CROSS_COMPILING)
+	set(CMAKE_PREFIX_PATH PATHS C:/MinGW/bin)
 endif()
+
+
+find_package(PkgConfig)
+set(_TOX_COMPNENTS toxencryptsave toxdns toxav toxcore) # default components
 
 pkg_check_modules(_PKG_TOX QUIET libtoxcore)
 set(LIBTOX_DEFINITIONS ${_PKG_TOX_CFLAGS_OTHER})
@@ -34,6 +36,7 @@ find_path(LIBTOX_INCLUDE_DIR tox/tox.h HINTS
     ${_PKG_TOX_INCLUDEDIR}
     ${_PKG_TOX_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}/libs/windows-x64/include
+	${CMAKE_SOURCE_DIR}/libs/windows/include
 )
 
 # required components
@@ -42,6 +45,7 @@ foreach(_COMPNENT ${_TOX_COMPNENTS})
         ${_PKG_TOX_LIBDIR}
         ${_PKG_TOX_LIBRARY_DIRS}
         ${CMAKE_SOURCE_DIR}/libs/windows-x64/lib
+		${CMAKE_SOURCE_DIR}/libs/windows/lib
     )
     list(APPEND LIBTOX_LIBRARIES ${_TEMP})
     unset(_TEMP CACHE)

@@ -14,12 +14,14 @@ find_path(LIBFILTERAUDIO_INCLUDE_DIR filter_audio.h HINTS
     ${PKG_LIBFILTERAUDIO_INCLUDEDIR}
     ${PKG_LIBFILTERAUDIO_INCLUDE_DIRS}
     ${CMAKE_SOURCE_DIR}/libs/windows-x64/include
+	${CMAKE_SOURCE_DIR}/libs/windows/include
 )
 
 find_library(LIBFILTERAUDIO_LIBRARY NAMES filteraudio HINTS
     ${PKG_LIBFILTERAUDIO_LIBDIR}
     ${PKG_LIBFILTERAUDIO_LIBRARY_DIRS}
     ${CMAKE_SOURCE_DIR}/libs/windows-x64/lib
+	${CMAKE_SOURCE_DIR}/libs/windows/lib
 )
 
 include(FindPackageHandleStandardArgs)
