@@ -25,6 +25,8 @@ Latest stable build:
 Building uTox XP from source is easier than you think! Using terminal isn't required, we promise.
 
 Instructions for compiling for [32 bit](https://github.com/blueclouds8666/uTox_XP/blob/legacy-0.17.1/COMPILE32.md) or [64 bit](https://github.com/blueclouds8666/uTox_XP/blob/legacy-0.17.1/COMPILE64.md) architectures.
+
+If you are having problems or errors with the process, check the [troubleshooting document](TROUBLESHOOTING.md).
 <br />
 <br />
  
