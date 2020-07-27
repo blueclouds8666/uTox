@@ -47,11 +47,13 @@ We've made a video guide that shows step-by-step how we managed to compile μTox
 It might be helpful on these cases, so please check it out in [here](https://github.com/blueclouds8666/uTox_XP/raw/files/help/compiling.mp4).
 <br />
 
+
 **B. Try the process on a isolated virtual machine.** <br />
 It commonly happens that certain system configuration and software cause conflicts with the compiling process.
 We highly encourage you to try the compiling process under a VM, since it sets up a perfect enviroment and has been tested with our process.
 These are some popular virtualization programs we recommend:
 <br />
+
 
 - Parallels Desktop for Mac. Parallels International GmbH. (Paid software). [Homepage](https://www.parallels.com/products/desktop/)
 - Oracle VM VirtualBox. Oracle Corporation. (FOSS software). [Homepage](https://www.virtualbox.org)
