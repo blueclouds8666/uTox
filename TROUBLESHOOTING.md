@@ -8,14 +8,14 @@ If you are having troubles while trying to compile our software, here are some c
 
 Different system configurations may cause CMake to fail. Here are some things you can try:
 
-**A. Modify the system PATH variable to defaults.**
+**A. Modify the system PATH variable to defaults.** <br />
 The PATH system variable might have been changed by other applications such as GIT or Cygwin. This causes CMake to not find the proper MinGW components. Global variables may be changed at:
 Start menu > right click on My PC > Properties > Advanced > Environment Variables...
 On "System variables", check the "Path" variable. You can modify it but since it completely deppends on each context, we can't provide a global solution to that. 
 We recommend changing it to its default value:
 > %SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem
 
-**B. Manually specify MinGW component paths.**
+**B. Manually specify MinGW component paths.** <br />
 Sometimes CMake might have trouble finding your MinGW components. We can manually specify them by:
 1. On the CMake window, click on Add Entry. Enter this values:
 
