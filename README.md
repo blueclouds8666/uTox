@@ -19,6 +19,7 @@ Latest stable build:
 - **Version number:**  v0.17.1-R2
 - [32bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.1-R2/utox-i686.exe)
 - [64bit binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.1-R2/utox-AMD64.exe)
+- [portable binary](https://github.com/blueclouds8666/uTox_XP/raw/files/binaries/0.17.1-R2/utox-portable.7z)
 
 ## Compiling
 
