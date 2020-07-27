@@ -29,5 +29,7 @@ Choose the level of difficulty:
 
 - **Skilled:** build μTox AND the c-toxcore library. [32bit](https://github.com/blueclouds8666/uTox_XP/blob/oldtoxcore/COMPILE32-full.md) and [64bit](https://github.com/blueclouds8666/uTox_XP/blob/oldtoxcore/COMPILE64-full.md) instructions.
   - it takes more time but you might be interested on this one.
+
+If you are having problems or errors with the process, check the [troubleshooting document](TROUBLESHOOTING.md).
 <br />
 <br />
