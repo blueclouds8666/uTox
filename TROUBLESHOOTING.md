@@ -45,21 +45,19 @@ You've tried it all but you are still having problems compiling μTox? We sugges
 Maybe you are doing some compiling steps the wrong way or you couldn't understand it well.
 We've made a video guide that shows step-by-step how we managed to compile μTox. 
 It might be helpful on these cases, so please check it out in [here](https://github.com/blueclouds8666/uTox_XP/raw/files/help/compiling.mp4).
-<br />
 
 
 **B. Try the process on a isolated virtual machine.** <br />
 It commonly happens that certain system configuration and software cause conflicts with the compiling process.
 We highly encourage you to try the compiling process under a VM, since it sets up a perfect enviroment and has been tested with our process.
 These are some popular virtualization programs we recommend:
-<br />
-
 
 - Parallels Desktop for Mac. Parallels International GmbH. (Paid software). [Homepage](https://www.parallels.com/products/desktop/)
 - Oracle VM VirtualBox. Oracle Corporation. (FOSS software). [Homepage](https://www.virtualbox.org)
  
 There are tons of guides on how to set up a VM on the internet if you need to check them.
 Best option is to clean install Windows XP SP3 (32-bits), with 1GB of system memory.
+
 
 **C. Ask on the issues tab.** <br />
 As a last resort, you can always ask our community and we can try to help you.
